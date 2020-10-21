@@ -193,6 +193,28 @@
 		.row > & {
 			margin-bottom: 0;
 		}
+
+		.rolloverContainer {
+		   width: 300px;
+		   height: 300px;
+		   position: relative;
+		   overflow: hidden;	
+		}
+
+		.content {
+		   width: 293px;
+		   background: #666;
+		   opacity: 0.7;
+		   padding: 10px;	
+		   font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+		   color: #FFF;
+		   position: relative;
+		}
+
+		.description {
+		   font-size: 0.8em;	
+		}
+
 	}
 
 /* Image */

@@ -113,7 +113,6 @@
 				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
 					$('#headerToggle, #header, #main')
 						.css('transition', 'none');
-
 	});
 
 })(jQuery);
