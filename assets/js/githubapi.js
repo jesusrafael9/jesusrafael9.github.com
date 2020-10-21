@@ -3,12 +3,14 @@
 	$.ajax({
 	    url:'https://api.github.com/users/jesusrafael9/repos',
 	    data:{
-          sort: 'language:Java ',
+          client_id:'f63015713195c252f8dd',
+          client_secret:'f7a802a4176007b18d5b67f032bfd06ca4225605',
+          sort: 'created: asc',
           per_page: 6
         }
 	}).done(function(repos){
 		var $portfolio = $("#portfolio div.container div.row");
-		console.log(repos);
+	
 		$portfolio.html(getArticles(repos))
 
 
