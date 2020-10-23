@@ -1304,7 +1304,7 @@ section, article {
     position: relative;
     overflow: hidden; }
   section .content, article .content {
-    width: 293px;
+    width: auto;
     background: #666;
     opacity: 0.7;
     padding: 10px;
