@@ -6,24 +6,23 @@
           client_id:'f63015713195c252f8dd',
           client_secret:'f7a802a4176007b18d5b67f032bfd06ca4225605',
           sort: 'created: asc',
-          per_page: 6
+          per_page: 10
         }
 	}).done(function(repos){
 		var $portfolio = $("#portfolio div.container div.row");
 	
 		$portfolio.html(getArticles(repos))
 
-
 	    function getArticles(repos){
 	    	return (`
             <div class="4u 12u$(mobile)">
 									<article class="item">
-										<a href="${repos[0].html_url}" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+										<a href="${repos[8].html_url}" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
 										<div class="content">
 								            <span class="description">${repos[0].description}.</span>
 								         </div>
 										<header>
-											<h3>${repos[0].name}</h3>
+											<h3>${repos[8].name}</h3>
 										</header>
 									</article>
 									<article class="item">
