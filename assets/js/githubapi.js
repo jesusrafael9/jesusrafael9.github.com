@@ -19,7 +19,7 @@
 									<article class="item">
 										<a href="${repos[8].html_url}" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
 										<div class="content">
-								            <span class="description">${repos[0].description}.</span>
+								            <span class="description">${repos[8].description}.</span>
 								         </div>
 										<header>
 											<h3>${repos[8].name}</h3>
