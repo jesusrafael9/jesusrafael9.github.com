@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Jesus Cardozo. Ingeniero de Software Senior · Arquitectura de Plataformas de IA">
+  <rect width="1200" height="630" fill="#faf9f6"/>
+  <rect width="1200" height="14" fill="#3d49b5"/>
+  <g font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
+    <text x="88" y="252" font-size="96" font-weight="700" letter-spacing="-3" fill="#1e1c19">Jesus Cardozo</text>
+    <text x="88" y="340" font-size="45" font-weight="600" fill="#1e1c19">Ingeniero de Software Senior</text>
+    <text x="88" y="400" font-size="45" font-weight="600" fill="#3d49b5">Arquitectura de Plataformas de IA</text>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" fill="#5c574f">
+    <text x="88" y="478" font-size="27">Sistemas LLM, agentes de IA y MCP · Java · TypeScript · Cloud</text>
+    <text x="88" y="566" font-size="26">jesusrafael9.github.io</text>
+  </g>
+</svg>

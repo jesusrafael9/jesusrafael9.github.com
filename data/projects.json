@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "fleet-mcp-server",
+    "name": "fleet-mcp-server",
+    "language": "TypeScript",
+    "status": "planned",
+    "repo": "https://github.com/jesusrafael9/fleet-mcp-server",
+    "demo": null,
+    "es": {
+      "tagline": "Servidor MCP de logística de flotas con permisos, confirmación en dos pasos y auditoría.",
+      "problem": "",
+      "highlights": []
+    },
+    "en": {
+      "tagline": "MCP server for fleet logistics with scoped permissions, two-step confirmation and audit log.",
+      "problem": "",
+      "highlights": []
+    }
+  },
+  {
+    "slug": "llm-gateway",
+    "name": "llm-gateway",
+    "language": "Java",
+    "status": "planned",
+    "repo": "https://github.com/jesusrafael9/llm-gateway",
+    "demo": null,
+    "es": {
+      "tagline": "Gateway LLM-agnostic con routing, fallback, presupuestos y observabilidad.",
+      "problem": "",
+      "highlights": []
+    },
+    "en": {
+      "tagline": "LLM-agnostic gateway with routing, fallback, budgets and observability.",
+      "problem": "",
+      "highlights": []
+    }
+  },
+  {
+    "slug": "bounded-agent",
+    "name": "bounded-agent",
+    "language": "Python",
+    "status": "planned",
+    "repo": "https://github.com/jesusrafael9/bounded-agent",
+    "demo": null,
+    "es": {
+      "tagline": "Runtime de agente con límites, políticas, aprobación humana y trazas reproducibles.",
+      "problem": "",
+      "highlights": []
+    },
+    "en": {
+      "tagline": "Agent runtime with budgets, policies, human approval and replayable traces.",
+      "problem": "",
+      "highlights": []
+    }
+  },
+  {
+    "slug": "llm-evals-ci",
+    "name": "llm-evals-ci",
+    "language": "TypeScript",
+    "status": "planned",
+    "repo": "https://github.com/jesusrafael9/llm-evals-ci",
+    "demo": null,
+    "es": {
+      "tagline": "Evals de prompts, modelos y agentes como tests en CI, con baseline y regresiones.",
+      "problem": "",
+      "highlights": []
+    },
+    "en": {
+      "tagline": "Evals for prompts, models and agents as CI tests, with baselines and regressions.",
+      "problem": "",
+      "highlights": []
+    }
+  },
+  {
+    "slug": "doc-extract",
+    "name": "doc-extract",
+    "language": "Java",
+    "status": "planned",
+    "repo": "https://github.com/jesusrafael9/doc-extract",
+    "demo": null,
+    "es": {
+      "tagline": "Extracción de documentos a JSON validado combinando LLM y reglas deterministas.",
+      "problem": "",
+      "highlights": []
+    },
+    "en": {
+      "tagline": "Document-to-JSON extraction combining an LLM with deterministic rules.",
+      "problem": "",
+      "highlights": []
+    }
+  }
+]

@@ -1,118 +1,197 @@
 /*
-	Prologue by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+ * jesusrafael9.github.io
+ * Plain JavaScript, no dependencies:
+ *   1. light/dark theme toggle, remembered in localStorage
+ *   2. current year in the footer
+ *   3. project cards rendered from data/projects.json
+ */
+(function () {
+  'use strict';
 
-(function($) {
+  var root = document.documentElement;
 
-	skel.breakpoints({
-		wide: '(min-width: 961px) and (max-width: 1880px)',
-		normal: '(min-width: 961px) and (max-width: 1620px)',
-		narrow: '(min-width: 961px) and (max-width: 1320px)',
-		narrower: '(max-width: 960px)',
-		mobile: '(max-width: 736px)'
-	});
+  /* ---------------------------------------------------------------- Theme */
+  // The stored theme is applied by the inline script in <head> before the
+  // first paint; this part only handles the button and keeps the UI in sync.
 
-	$(function() {
+  var THEME_KEY = 'theme';
+  var THEME_COLORS = { light: '#faf9f6', dark: '#131211' };
+  var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  var toggle = document.querySelector('[data-theme-toggle]');
 
-		var	$window = $(window),
-			$body = $('body');
+  function systemTheme() {
+    return darkQuery.matches ? 'dark' : 'light';
+  }
 
-		// Disable animations/transitions until the page has loaded.
-			$body.addClass('is-loading');
+  function currentTheme() {
+    var forced = root.getAttribute('data-theme');
+    return forced === 'light' || forced === 'dark' ? forced : systemTheme();
+  }
 
-			$window.on('load', function() {
-				$body.removeClass('is-loading');
-			});
+  function syncThemeUi() {
+    var theme = currentTheme();
+    if (toggle) {
+      toggle.setAttribute('aria-pressed', String(theme === 'dark'));
+    }
+    document.querySelectorAll('meta[name="theme-color"]').forEach(function (meta) {
+      meta.setAttribute('content', THEME_COLORS[theme]);
+    });
+  }
 
-		// CSS polyfills (IE<9).
-			if (skel.vars.IEVersion < 9)
-				$(':last-child').addClass('last-child');
+  function setTheme(theme) {
+    // Choosing what the system already asks for clears the override, so the
+    // page goes back to following the system preference.
+    var override = theme === systemTheme() ? null : theme;
+    if (override) {
+      root.setAttribute('data-theme', override);
+    } else {
+      root.removeAttribute('data-theme');
+    }
+    try {
+      if (override) {
+        localStorage.setItem(THEME_KEY, override);
+      } else {
+        localStorage.removeItem(THEME_KEY);
+      }
+    } catch (e) {
+      // Storage can be blocked (private mode); the theme still applies for this visit.
+    }
+    syncThemeUi();
+  }
 
-		// Fix: Placeholder polyfill.
-			$('form').placeholder();
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      setTheme(currentTheme() === 'dark' ? 'light' : 'dark');
+    });
+  }
+  if (darkQuery.addEventListener) {
+    darkQuery.addEventListener('change', syncThemeUi);
+  }
+  syncThemeUi();
 
-		// Prioritize "important" elements on mobile.
-			skel.on('+mobile -mobile', function() {
-				$.prioritize(
-					'.important\\28 mobile\\29',
-					skel.breakpoint('mobile').active
-				);
-			});
+  /* ----------------------------------------------------------------- Year */
 
-		// Scrolly links.
-			$('.scrolly').scrolly();
+  document.querySelectorAll('[data-year]').forEach(function (node) {
+    node.textContent = String(new Date().getFullYear());
+  });
 
-		// Nav.
-			var $nav_a = $('#nav a');
+  /* ------------------------------------------------------------- Projects */
+  // Only entries with "status": "published" are rendered. While there are
+  // none (or the JSON cannot be loaded) the section and its nav link stay hidden.
 
-			// Scrolly-fy links.
-				$nav_a
-					.scrolly()
-					.on('click', function(e) {
+  function el(tag, className, text) {
+    var node = document.createElement(tag);
+    if (className) {
+      node.className = className;
+    }
+    if (text) {
+      node.textContent = text;
+    }
+    return node;
+  }
 
-						var t = $(this),
-							href = t.attr('href');
+  function isHttpUrl(value) {
+    return typeof value === 'string' && /^https?:\/\//i.test(value);
+  }
 
-						if (href[0] != '#')
-							return;
+  function projectLink(url, label, projectName) {
+    var link = el('a', 'project__link', label);
+    link.href = url;
+    link.setAttribute('aria-label', label + ': ' + projectName);
+    return link;
+  }
 
-						e.preventDefault();
+  function projectCard(project, copy, labels) {
+    var card = el('li', 'card project');
 
-						// Clear active and lock scrollzer until scrolling has stopped
-							$nav_a
-								.removeClass('active')
-								.addClass('scrollzer-locked');
+    var header = el('div', 'project__header');
+    header.appendChild(el('h3', 'project__name', project.name));
+    if (project.language) {
+      header.appendChild(el('span', 'tag', project.language));
+    }
+    card.appendChild(header);
 
-						// Set this link to active
-							t.addClass('active');
+    card.appendChild(el('p', 'project__tagline', copy.tagline));
 
-					});
+    if (copy.problem) {
+      card.appendChild(el('p', 'card__text', copy.problem));
+    }
 
-			// Initialize scrollzer.
-				var ids = [];
+    var highlights = Array.isArray(copy.highlights) ? copy.highlights.filter(Boolean) : [];
+    if (highlights.length) {
+      var list = el('ul', 'project__highlights');
+      highlights.forEach(function (item) {
+        list.appendChild(el('li', '', item));
+      });
+      card.appendChild(list);
+    }
 
-				$nav_a.each(function() {
+    var links = el('p', 'project__links');
+    if (isHttpUrl(project.repo)) {
+      links.appendChild(projectLink(project.repo, labels.repo, project.name));
+    }
+    if (isHttpUrl(project.demo)) {
+      links.appendChild(projectLink(project.demo, labels.demo, project.name));
+    }
+    if (links.childNodes.length) {
+      card.appendChild(links);
+    }
 
-					var href = $(this).attr('href');
+    return card;
+  }
 
-					if (href[0] != '#')
-						return;
+  function renderProjects(section, projects, lang) {
+    var list = section.querySelector('[data-projects-list]');
+    if (!list || !Array.isArray(projects)) {
+      return;
+    }
 
-					ids.push(href.substring(1));
+    var labels = {
+      repo: section.getAttribute('data-label-repo') || 'Code',
+      demo: section.getAttribute('data-label-demo') || 'Demo'
+    };
 
-				});
+    var cards = [];
+    projects.forEach(function (project) {
+      if (!project || project.status !== 'published' || !project.name) {
+        return;
+      }
+      var copy = project[lang] || project.es || project.en;
+      if (!copy || !copy.tagline) {
+        return;
+      }
+      cards.push(projectCard(project, copy, labels));
+    });
 
-				$.scrollzer(ids, { pad: 200, lastHack: true });
+    if (!cards.length) {
+      return;
+    }
 
-		// Header (narrower + mobile).
+    cards.forEach(function (card) {
+      list.appendChild(card);
+    });
+    section.hidden = false;
+    document.querySelectorAll('[data-projects-nav]').forEach(function (item) {
+      item.hidden = false;
+    });
+  }
 
-			// Toggle.
-				$(
-					'<div id="headerToggle">' +
-						'<a href="#header" class="toggle"></a>' +
-					'</div>'
-				)
-					.appendTo($body);
+  var projectsSection = document.querySelector('[data-projects]');
+  if (projectsSection && window.fetch) {
+    var lang = (root.lang || 'es').slice(0, 2).toLowerCase() === 'en' ? 'en' : 'es';
 
-			// Header.
-				$('#header')
-					.panel({
-						delay: 500,
-						hideOnClick: true,
-						hideOnSwipe: true,
-						resetScroll: true,
-						resetForms: true,
-						side: 'left',
-						target: $body,
-						visibleClass: 'header-visible'
-					});
-
-			// Fix: Remove transitions on WP<10 (poor/buggy performance).
-				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
-					$('#headerToggle, #header, #main')
-						.css('transition', 'none');
-	});
-
-})(jQuery);
+    fetch(projectsSection.getAttribute('data-src'))
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error('HTTP ' + response.status);
+        }
+        return response.json();
+      })
+      .then(function (projects) {
+        renderProjects(projectsSection, projects, lang);
+      })
+      .catch(function () {
+        // Nothing to show: the section stays hidden.
+      });
+  }
+})();
