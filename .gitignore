@@ -1,0 +1,7 @@
+# Editor and OS files
+.idea/
+.DS_Store
+
+# Working brief for the redesign. GitHub Pages serves the repo root as-is,
+# so it stays out of the repo to avoid publishing it.
+SITE_BRIEF.md
