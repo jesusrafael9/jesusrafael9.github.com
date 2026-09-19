@@ -181,6 +181,19 @@ a:hover {
   flex: none;
 }
 
+/* Inline SVG sprite: keeps the symbols available without taking up space. */
+.sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* <main> is focusable only as the skip-link target. */
+main:focus {
+  outline: none;
+}
+
 .skip-link {
   position: absolute;
   top: 0.5rem;

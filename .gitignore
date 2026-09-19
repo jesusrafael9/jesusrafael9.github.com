@@ -1,5 +1,6 @@
-# Editor and OS files
+# Editor, tooling and OS files
 .idea/
+.claude/
 .DS_Store
 
 # Working brief for the redesign. GitHub Pages serves the repo root as-is,

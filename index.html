@@ -1,152 +1,325 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Jesus Cardozo</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	</head>
-	<body>
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jesus Cardozo — Ingeniero de Software Senior · Arquitectura de Plataformas de IA</title>
+  <meta name="description" content="Ingeniero de Software Senior · Arquitectura de Plataformas de IA. Sistemas LLM, agentes de IA y MCP. Más de 10 años construyendo sistemas en producción.">
+  <meta name="author" content="Jesus Cardozo">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f6">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#131211">
 
-		<!-- Header -->
-			<div id="header">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-				<div class="top">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
 
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
-							<h1 id="title">Jesús Cardozo</h1>
-							<p>Development Web</p>
-						</div>
+  <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="icon-linkedin" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </symbol>
+    <symbol id="icon-github" viewBox="0 0 16 16">
+      <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+    </symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="5" width="18" height="14" rx="2"/>
+        <path d="m3 7 9 6 9-6"/>
+      </g>
+    </symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/>
+        <circle cx="12" cy="10" r="2.5"/>
+      </g>
+    </symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+      </g>
+    </symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </symbol>
+  </svg>
 
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
-								<li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
-								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
-							</ul>
-						</nav>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#top">Jesus Cardozo</a>
 
-				</div>
+      <nav class="site-nav" aria-label="Secciones">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="#que-hago">Qué hago</a></li>
+          <li data-projects-nav hidden><a class="site-nav__link" href="#proyectos">Proyectos</a></li>
+          <li><a class="site-nav__link" href="#experiencia">Experiencia</a></li>
+          <li><a class="site-nav__link" href="#stack">Stack</a></li>
+          <li><a class="site-nav__link" href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
 
-				<div class="bottom">
+      <div class="header-tools">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <span class="lang-switch__item" aria-current="true">
+            <span aria-hidden="true">ES</span><span class="visually-hidden">Español</span>
+          </span>
+          <a class="lang-switch__item" href="en/" hreflang="en" lang="en">
+            <span aria-hidden="true">EN</span><span class="visually-hidden">English</span>
+          </a>
+        </div>
 
-					<!-- Social Icons -->
-						<ul class="icons">
-							<li><a href="https://github.com/jesusrafael9/jesusrafael9.github.com" class="icon fa-github"><span class="label">Github</span></a></li>
-							<li><a href="https://www.linkedin.com/in/jesus-cardozo-95b3bbb1/" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
-							<li><a href="mailto:jesusrafael9@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
+        <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Tema oscuro" aria-pressed="false">
+          <svg class="icon theme-toggle__moon" aria-hidden="true" focusable="false"><use href="#icon-moon"/></svg>
+          <svg class="icon theme-toggle__sun" aria-hidden="true" focusable="false"><use href="#icon-sun"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
-				</div>
+  <main id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <div class="hero__media">
+          <picture>
+            <source type="image/webp" srcset="assets/img/avatar-200.webp 200w, assets/img/avatar-400.webp 400w" sizes="(min-width: 48rem) 184px, 120px">
+            <img class="hero__avatar" src="assets/img/avatar-400.jpg" srcset="assets/img/avatar-200.jpg 200w, assets/img/avatar-400.jpg 400w" sizes="(min-width: 48rem) 184px, 120px" width="400" height="400" alt="Retrato ilustrado de Jesus Cardozo" fetchpriority="high" decoding="async">
+          </picture>
+        </div>
 
-			</div>
+        <div class="hero__content">
+          <h1 class="hero__name" id="hero-title">Jesus Cardozo</h1>
+          <p class="hero__headline">Ingeniero de Software Senior · Arquitectura de Plataformas de IA</p>
+          <p class="hero__focus">Sistemas LLM, agentes de IA y MCP · Java · TypeScript · Cloud</p>
+          <p class="hero__summary">Más de 10 años construyendo sistemas en producción, de servicios de marketplace de alto tráfico en Mercado Libre a plataformas de IA hoy. Diseño plataformas donde los LLM son un componente de un sistema fiable, no el sistema en sí.</p>
+          <p class="hero__location">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-pin"/></svg>
+            Valencia, España
+          </p>
+          <ul class="hero__actions">
+            <li>
+              <a class="button button--primary" href="https://www.linkedin.com/in/jesus-cardozo-95b3bbb1/" rel="me">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin"/></svg>
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a class="button button--secondary" href="https://github.com/jesusrafael9" rel="me">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"/></svg>
+                GitHub
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-		<!-- Main -->
-			<div id="main">
+    <section class="section" id="que-hago" aria-labelledby="que-hago-title">
+      <div class="container">
+        <h2 class="section__title" id="que-hago-title">Qué hago</h2>
+        <ul class="cards">
+          <li class="card">
+            <span class="card__index" aria-hidden="true">01</span>
+            <h3 class="card__title">Arquitectura LLM-agnostic</h3>
+            <p class="card__text">Abstracción de proveedores, routing, fallback, presupuestos y observabilidad unificada.</p>
+          </li>
+          <li class="card">
+            <span class="card__index" aria-hidden="true">02</span>
+            <h3 class="card__title">Agentes de IA fiables</h3>
+            <p class="card__text">Agentes acotados y auditables que usan herramientas; integración MCP, catálogos de capacidades y gateways de ejecución.</p>
+          </li>
+          <li class="card">
+            <span class="card__index" aria-hidden="true">03</span>
+            <h3 class="card__title">Seguridad desde el diseño</h3>
+            <p class="card__text">Identidad, consentimiento, credenciales, permisos, cuotas y revocación; estándares para supply chain y código generado.</p>
+          </li>
+          <li class="card">
+            <span class="card__index" aria-hidden="true">04</span>
+            <h3 class="card__title">Ingeniería de fiabilidad</h3>
+            <p class="card__text">Idempotencia, trazabilidad, gestión de fallos parciales, SLOs, alertas y análisis de causa raíz.</p>
+          </li>
+          <li class="card">
+            <span class="card__index" aria-hidden="true">05</span>
+            <h3 class="card__title">Evals y entrega</h3>
+            <p class="card__text">Suites de evaluación y pruebas E2E para prompts, modelos y tools; pipelines reproducibles de build, despliegue y rollback.</p>
+          </li>
+          <li class="card">
+            <span class="card__index" aria-hidden="true">06</span>
+            <h3 class="card__title">Liderazgo técnico</h3>
+            <p class="card__text">Revisiones de arquitectura y código, ADRs, mentoring y evaluación de modelos y proveedores basada en evidencia.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-				<!-- Intro -->
-					<section id="top" class="one dark cover">
-						<div class="container">
+    <!-- Filled from data/projects.json. Stays hidden while no project is "published". -->
+    <section class="section" id="proyectos" aria-labelledby="proyectos-title" data-projects data-src="data/projects.json" data-label-repo="Código" data-label-demo="Demo" hidden>
+      <div class="container">
+        <h2 class="section__title" id="proyectos-title">Proyectos</h2>
+        <ul class="cards" data-projects-list></ul>
+      </div>
+    </section>
 
-							<header>
-								<h2 class="alt">Hi! I'm <strong>a full stack web developer</strong>.</h2>
-								<p>Constancy and dedication are the principles to obtain better results of what we want in life<br />
-								</p>
-							</header>
+    <section class="section" id="experiencia" aria-labelledby="experiencia-title">
+      <div class="container">
+        <h2 class="section__title" id="experiencia-title">Experiencia</h2>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <p class="timeline__period"><time datetime="2025-10">oct 2025</time> – hoy</p>
+            <div>
+              <h3 class="timeline__role">Ingeniero de Software Senior · Plataforma de IA</h3>
+              <p class="timeline__company">Hiberus</p>
+              <p class="timeline__text">Arquitectura técnica de una plataforma de IA: capa LLM-agnostic, agentes con herramientas, MCP, seguridad, evals y fiabilidad.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__period"><time datetime="2023-03">mar 2023</time> – <time datetime="2025-09">sep 2025</time></p>
+            <div>
+              <h3 class="timeline__role">Ingeniero de Software Senior · Líder Técnico</h3>
+              <p class="timeline__company">Hiberus</p>
+              <p class="timeline__text">Líder técnico de un equipo de 6 en una plataforma de logística de camiones: GPS, temperatura de camiones refrigerados, rutas, calendarios y movilidad.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__period"><time datetime="2019-12">dic 2019</time> – <time datetime="2023-02">feb 2023</time></p>
+            <div>
+              <h3 class="timeline__role">Ingeniero de Software</h3>
+              <p class="timeline__company">Mercado Libre</p>
+              <p class="timeline__text">Servicios Java (Spring, Spark) para flujos de marketplace de alto tráfico; APIs REST y GraphQL; React; New Relic y Datadog.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__period"><time datetime="2018-06">jun 2018</time> – <time datetime="2019-11">nov 2019</time></p>
+            <div>
+              <h3 class="timeline__role">Ingeniero de Desarrollo de Software</h3>
+              <p class="timeline__company">BDEV · Verifarma</p>
+              <p class="timeline__text">Software de trazabilidad farmacéutica con Java/Spring y PHP (Symfony, Laravel).</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__period"><time datetime="2016-04">abr 2016</time> – <time datetime="2018-06">jun 2018</time></p>
+            <div>
+              <h3 class="timeline__role">Desarrollador de Software</h3>
+              <p class="timeline__company">MRM//McCann</p>
+              <p class="timeline__text">Desarrollo web para sitios de marca y campañas: PHP (Laravel, Symfony), AngularJS y React.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-							<footer>
-								<a href="#portfolio" class="button scrolly">see more</a>
-							</footer>
+    <section class="section" id="stack" aria-labelledby="stack-title">
+      <div class="container">
+        <h2 class="section__title" id="stack-title">Stack</h2>
+        <dl class="stack">
+          <div class="stack__group">
+            <dt class="stack__name">IA</dt>
+            <dd>
+              <ul class="tags">
+                <li class="tag">LLMs</li>
+                <li class="tag">agentes de IA</li>
+                <li class="tag">Model Context Protocol (MCP)</li>
+                <li class="tag">evals</li>
+                <li class="tag">prompt engineering</li>
+              </ul>
+            </dd>
+          </div>
+          <div class="stack__group">
+            <dt class="stack__name">Backend</dt>
+            <dd>
+              <ul class="tags">
+                <li class="tag">Java</li>
+                <li class="tag">Spring Boot</li>
+                <li class="tag">TypeScript</li>
+                <li class="tag">Node.js</li>
+                <li class="tag">NestJS</li>
+                <li class="tag">Python</li>
+              </ul>
+            </dd>
+          </div>
+          <div class="stack__group">
+            <dt class="stack__name">Datos</dt>
+            <dd>
+              <ul class="tags">
+                <li class="tag">PostgreSQL</li>
+                <li class="tag">MySQL</li>
+                <li class="tag">MongoDB</li>
+              </ul>
+            </dd>
+          </div>
+          <div class="stack__group">
+            <dt class="stack__name">Plataforma</dt>
+            <dd>
+              <ul class="tags">
+                <li class="tag">Docker</li>
+                <li class="tag">Kubernetes</li>
+                <li class="tag">Microsoft Azure</li>
+                <li class="tag">CI/CD</li>
+                <li class="tag">observabilidad (OpenTelemetry, Datadog, New Relic)</li>
+              </ul>
+            </dd>
+          </div>
+          <div class="stack__group">
+            <dt class="stack__name">Frontend</dt>
+            <dd>
+              <ul class="tags">
+                <li class="tag">React</li>
+                <li class="tag">JavaScript</li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
 
-						</div>
-					</section>
+    <section class="section" id="contacto" aria-labelledby="contacto-title">
+      <div class="container">
+        <h2 class="section__title" id="contacto-title">Contacto</h2>
+        <ul class="contact-list">
+          <li>
+            <a class="contact-link" href="mailto:jesusrafael9@gmail.com">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-mail"/></svg>
+              <span>
+                <span class="contact-link__label">Email</span>
+                <span class="contact-link__value">jesusrafael9@gmail.com</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="contact-link" href="https://www.linkedin.com/in/jesus-cardozo-95b3bbb1/" rel="me">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin"/></svg>
+              <span>
+                <span class="contact-link__label">LinkedIn</span>
+                <span class="contact-link__value">in/jesus-cardozo-95b3bbb1</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="contact-link" href="https://github.com/jesusrafael9" rel="me">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"/></svg>
+              <span>
+                <span class="contact-link__label">GitHub</span>
+                <span class="contact-link__value">jesusrafael9</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
-				<!-- Portfolio -->
-					<section id="portfolio" class="two">
-						<div class="container">
-
-							<header>
-								<h2>Portfolio</h2>
-							</header>
-
-							<p>Then, I present several projects, developed in web technologies</p>
-
-							<div class="row">
-								<!-- Hear repos git -->
-							</div>
-
-						</div>
-					</section>
-
-				<!-- About Me -->
-					<section id="about" class="three">
-						<div class="container">
-
-							<header>
-								<h2>About Me</h2>
-							</header>
-
-							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-
-							<p>I am a web developer, with more than 7 years, experiencing the different technologies, frontend and backend. participating in projects with programming languages ​​java, php, c ++, python, and SQL, to the use of framework as AngularJS and Reactjs.</p>
-
-						</div>
-					</section>
-
-				<!-- Contact -->
-					<section id="contact" class="four">
-						<div class="container">
-
-							<header>
-								<h2>Contact</h2>
-							</header>
-
-							<p>For more information on my latest developments, do not forget to contact me</p>
-
-							<form method="post" action="mailto:jesusrafael9@gmail.com">
-								<div class="row">
-									<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
-									<div class="12u$">
-										<textarea name="message" placeholder="Message"></textarea>
-									</div>
-									<div class="12u$">
-										<input type="submit" value="Send Message" />
-									</div>
-								</div>
-							</form>
-
-						</div>
-					</section>
-
-			</div>
-
-		<!-- Footer -->
-			<div id="footer">
-
-				<!-- Copyright -->
-					<ul class="copyright">
-						<li>&copy; Jesús Cardozo. All rights reserved.</li><li>Design: HTML5 UP </li>
-					</ul>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollzer.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-			<script src="assets/js/githubapi.js"></script>
-
-	</body>
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© <span data-year>2026</span> Jesus Cardozo</p>
+      <ul class="site-footer__links">
+        <li><a class="site-footer__link" href="https://github.com/jesusrafael9/jesusrafael9.github.com">Código de este sitio</a></li>
+        <li><a class="site-footer__link" href="https://adeviosystem.com/">adeviosystem.com</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
 </html>
