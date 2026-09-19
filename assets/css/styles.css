@@ -251,10 +251,13 @@ main:focus {
   width: 100%;
 }
 
+/* Narrow screens: the links share one full-width row (the type scales down a
+   little so five links still fit at 360px) and only wrap as a last resort. */
 .site-nav__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0 1.125rem;
+  justify-content: space-between;
+  gap: 0 0.25rem;
 }
 
 .site-nav__link {
@@ -262,8 +265,15 @@ main:focus {
   align-items: center;
   min-height: var(--tap);
   color: var(--muted);
-  font-size: 0.9375rem;
+  font-size: clamp(0.8125rem, 3.6vw, 0.9375rem);
   text-decoration: none;
+}
+
+@media (min-width: 30rem) {
+  .site-nav__list {
+    justify-content: flex-start;
+    gap: 0 1.125rem;
+  }
 }
 
 .site-nav__link:hover {
