@@ -18,7 +18,20 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 
+  <script>
+    // Runs before the first paint: flags JS support and applies the saved theme.
+    (function (root) {
+      root.classList.remove('no-js');
+      try {
+        var theme = localStorage.getItem('theme');
+        if (theme === 'light' || theme === 'dark') {
+          root.setAttribute('data-theme', theme);
+        }
+      } catch (e) {}
+    })(document.documentElement);
+  </script>
   <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
